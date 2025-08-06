@@ -43,7 +43,7 @@ setContent(type)
 
           <WayToteach{... ways[3] }/>
           
-        </ul>
+        </ul> 
       </section>
       <section>
         <h3>Чем мы отличаемся от других</h3>
