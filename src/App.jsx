@@ -1,31 +1,23 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 import Header from './components/Header'
 import {ways, differences} from './data'
 import WayToteach from './components/WayToTeach'
 import Button from './components/Button/Button'
 
+//GitHub Pages
 
 
+  function App() {
 
-function App() {
-
-  const [content,setContent] = useState('нажми на кнопку')
+  const [contentType,setContentType] = useState(null)
  
 
-  //let content = 'нажми на кнопку'
-  
-  //console.log('App Component Render')
-
   function handleClick(type){
-//console.log('button Clicked',type)
-setContent(type)
-//content=type
+
+setContentType(type)
+
 
   }
-  
   return(
 
 <div>
@@ -35,6 +27,10 @@ setContent(type)
       <section>
         <h3>наш подход</h3>
         <ul>
+          
+          {[ways.map(way=><WayToteach key ={way.title} {... way}/>)]}
+          
+          {/*
           <WayToteach {...ways[0]}/>
 
           <WayToteach{... ways[1] }/>
@@ -42,16 +38,22 @@ setContent(type)
           <WayToteach{... ways[2] }/>
 
           <WayToteach{... ways[3] }/>
+            <WayToteach{... ways[4] }/>*/}
           
         </ul> 
       </section>
       <section>
         <h3>Чем мы отличаемся от других</h3>
-<Button onClick={()=>handleClick('way')}>Падыход</Button>
-<Button onClick={()=>handleClick('easy')}>Даступнасць</Button>
-<Button onClick={()=>handleClick('program')}>Канцэнтрацыя</Button>
+<Button isActive={contentType==='way'} onClick={()=>handleClick('way')}>Падыход</Button>
+<Button isActive={contentType==='easy'} onClick={()=>handleClick('easy')}>Даступнасць</Button>
+<Button isActive={contentType==='program'} onClick={()=>handleClick('program')}>Канцэнтрацыя</Button>
 
-<p>{differences[content]}</p>
+
+
+
+      {!contentType ? <p>Націсні на мяне!</p> : null}
+      {contentType ? <p>{differences[contentType]}</p>:null}
+      
       </section>
   </main>
   
