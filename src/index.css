@@ -11,14 +11,7 @@ body {
   background: #fafafa;
 }
 
-header {
-  height: 50px;
-  display: flex;
-  padding: 0 2rem;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ccc;
-}
+
 
 main {
   max-width: 850px;
@@ -45,4 +38,19 @@ section ul li {
 .content,
 p {
   padding: 1rem 0;
+}
+
+
+.sentered{
+  text-align: center;
+}
+
+.control{
+border: 1px solid #ccc;
+border-radius: 5px;
+padding: 0.5rem 1rem;
+width: 100%;
+margin-bottom: 1rem;
+
+
 }
