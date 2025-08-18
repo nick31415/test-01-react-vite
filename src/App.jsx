@@ -6,11 +6,12 @@ import IntroSection from './components/introSection'
 import TabsSection from './components/TabsSection'
 import FeedbackSection from './components/FeedbackSection'
 import { useState } from 'react'
+import EffectSection from './components/EffectSection'
 //GitHub Pages
 
 
   function App() {
-const [tab,setTab] = useState('feedback')
+const [tab,setTab] = useState('effect')
   
   return(
 
@@ -29,12 +30,14 @@ const [tab,setTab] = useState('feedback')
 
     )}
 
-    {tab === 'feedback' &&(
+    {tab === 'feedback' && <FeedbackSection/>}
+
+    {tab === 'effect' && <EffectSection/>}
 <>
-<FeedbackSection/>
+
 </>
 
-    )}
+    
 
     
   </main>
